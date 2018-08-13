@@ -38,7 +38,6 @@ double calculate()
     }
 
   double distance = travelTime/58;  //distance in m
-  ROS_INFO_STREAM("abc" << distance/100);
   return distance;
 }
 
@@ -72,10 +71,9 @@ int main(int argc, char **argv)
     geometry_msgs::Vector3 range; 
     range.z = calculate()/100;
     range.z = range.z*1.0f;
-    ROS_INFO_STREAM("def" << calculate()/100);
     //msg.ranges[0];
-    //msg.ranges.push_back(range.z);
-    msg.ranges[0]=range.z;
+    msg.ranges.push_back(range.z);
+    //msg.ranges[0]=range.z;
     
     pub.publish(msg);
     //msg.ranges.pop_back();
