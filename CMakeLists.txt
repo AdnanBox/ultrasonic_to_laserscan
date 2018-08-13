@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   sensor_msgs
+  geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +106,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
    INCLUDE_DIRS include
 #  LIBRARIES fall_sensor
-   CATKIN_DEPENDS roscpp std_msgs sensor_msgs
+   CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs
 #  DEPENDS system_lib
 )
 
@@ -138,7 +139,7 @@ FIND_LIBRARY(WIRINGPI_LIBRARY wiringPi) # add path if needed -
 
 add_executable(fall_sensor src/fall_sensor.cpp)
 add_executable(clearance_publisher src/clearance_publisher.cpp)
-add_executable(ultrasonic_to_laser src/ultrasonic_to_laser.cpp)
+add_executable(scan_publisher src/scan_publisher.cpp)
 #add_executable(subscriber src/subscriber.cpp)
 
 # add_executable(${PROJECT_NAME}_node src/fall_sensor_node.cpp)
@@ -163,7 +164,7 @@ target_link_libraries(fall_sensor ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthrea
 
 target_link_libraries(clearance_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
-target_link_libraries(ultrasonic_to_laser ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(scan_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
 #target_link_libraries(subscriber ${catkin_LIBRARIES})
 

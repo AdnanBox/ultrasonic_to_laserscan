@@ -3,11 +3,11 @@
 #include <wiringPi.h>
 #include <wiringSerial.h> 
 #include <iostream>
+#include "geometry_msgs/Vector3.h"
 
 #define trig 3 //pin 15
-#define echo 6 //pin 16
+#define echo 6 //pin 22
 long travelTime, startTime;
-static double clearance = 0;
 
 void setup()
 {
@@ -35,7 +35,7 @@ int calculate()
       travelTime = micros() - startTime;
     }
 
-  double distance = travelTime/58;  //distance in cm
+  long distance = travelTime/58;  //distance in cm
   return distance;
 }
 
@@ -45,15 +45,14 @@ int main(int argc, char **argv)
   setup();
   ros::init(argc, argv, "clearance_publisher");
   ros::NodeHandle n;
-  ros::Publisher pub = n.advertise<std_msgs::Float32>("clearance", 1000);
+  ros::Publisher pub = n.advertise<std_msgs::Float32>("distance", 1000);
   ros::Rate rate(10);
 
   while (ros::ok())
   {
 
     std_msgs::Float32 msg;
-    clearance = calculate();
-    msg.data = clearance;
+    msg.data = calculate(); 
     pub.publish(msg);
     ros::spinOnce();
     rate.sleep();
