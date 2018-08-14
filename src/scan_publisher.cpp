@@ -66,17 +66,25 @@ int main(int argc, char **argv)
     msg.range_max = 2.00; //2m 
 
     uint32_t ranges_size = std::ceil((msg.angle_max - msg.angle_min) / msg.angle_increment);
-    msg.ranges.assign(ranges_size, msg.range_max -0.01);
+    msg.ranges.assign(ranges_size, std::numeric_limits<double>::infinity());
 
     geometry_msgs::Vector3 range; 
     range.z = calculate()/100;
     range.z = range.z*1.0f;
-    //msg.ranges[0];
-    msg.ranges.push_back(range.z);
+    //msg.ranges={};
+    if (range.z <= msg.range_max && range.z >= msg.range_min)
+    {
+      msg.ranges.push_back(range.z);
+    }
+    else
+    {
+      msg.ranges.push_back(std::numeric_limits<double>::infinity());
+    }
+
     //msg.ranges[0]=range.z;
     
     pub.publish(msg);
-    //msg.ranges.pop_back();
+    msg.ranges.pop_back();
     ros::spinOnce();
     rate.sleep();
     
