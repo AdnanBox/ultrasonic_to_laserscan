@@ -1,4 +1,7 @@
 # ultrasonic_to_laserscan
-display data from ultrasonic sensor as laser_Scan msg.
+This package reads information from an ultrasonic sensor and publishes it as a LaserScan msg. 
 
-It is required to clone the wiringPi library from hardkernel to use this repository.
+To use this repository, it is required to first clone the wiringPi library from Hardkernel. 
+https://github.com/hardkernel/wiringPi.git
+
+
