@@ -139,7 +139,11 @@ FIND_LIBRARY(WIRINGPI_LIBRARY wiringPi) # add path if needed -
 
 add_executable(fall_sensor src/fall_sensor.cpp)
 add_executable(clearance_publisher src/clearance_publisher.cpp)
+add_executable(LaserScan1 src/LaserScan1.cpp)
+add_executable(LaserScan2 src/LaserScan2.cpp)
+
 add_executable(scan_publisher src/scan_publisher.cpp)
+
 #add_executable(subscriber src/subscriber.cpp)
 
 # add_executable(${PROJECT_NAME}_node src/fall_sensor_node.cpp)
@@ -161,8 +165,9 @@ add_executable(scan_publisher src/scan_publisher.cpp)
 
 
 target_link_libraries(fall_sensor ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
-
 target_link_libraries(clearance_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(LaserScan1 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(LaserScan2 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
 target_link_libraries(scan_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
