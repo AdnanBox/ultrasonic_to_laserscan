@@ -1,0 +1,13 @@
+<launch>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_1" args="0 0 0 0 0 0 /map /scan_link_1 100"/>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_2" args="0 0 0 0 0 0 /map /scan_link_2 100"/>
+
+  <node pkg="fall_sensor" type="LaserScan1" name="scan_1" output="screen">
+    <param name = "min_range_1" type="double" value= "0.02"/>
+    <param name = "max_range_1" type="double" value= "2.0"/>
+  </node>
+  <node pkg="fall_sensor" type="LaserScan2" name="scan_2" output="screen">
+    <param name = "min_range_2" type="double" value= "0.02"/>
+    <param name = "max_range_2" type="double" value= "2.0"/>
+  </node>
+ </launch>
