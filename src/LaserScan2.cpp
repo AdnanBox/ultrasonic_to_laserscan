@@ -12,6 +12,7 @@
 
 static long travelTime, startTime;
 double range_min_, range_max_;
+int freq_;
 
 void setup()
 {
@@ -49,10 +50,10 @@ int main(int argc, char **argv)
   setup();
   ros::init(argc, argv, "scan_2");
   ros::NodeHandle n;
-
+  ros::param::get("/scan_2/freq", freq_);
 
   ros::Publisher pub = n.advertise<sensor_msgs::LaserScan>("scan_2", 1000);
-  ros::Rate rate(10);
+  ros::Rate rate(freq_);
 
   while (ros::ok())
   {
