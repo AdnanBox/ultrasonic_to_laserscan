@@ -141,8 +141,12 @@ add_executable(fall_sensor src/fall_sensor.cpp)
 add_executable(clearance_publisher src/clearance_publisher.cpp)
 add_executable(LaserScan1 src/LaserScan1.cpp)
 add_executable(LaserScan2 src/LaserScan2.cpp)
+add_executable(LaserScan3 src/LaserScan3.cpp)
+add_executable(LaserScan4 src/LaserScan4.cpp)
+add_executable(LaserScan5 src/LaserScan5.cpp)
 
 add_executable(scan_publisher src/scan_publisher.cpp)
+add_executable(test1 src/test1.cpp)
 
 #add_executable(subscriber src/subscriber.cpp)
 
@@ -168,8 +172,13 @@ target_link_libraries(fall_sensor ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthrea
 target_link_libraries(clearance_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 target_link_libraries(LaserScan1 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 target_link_libraries(LaserScan2 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(LaserScan3 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(LaserScan4 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(LaserScan5 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
 target_link_libraries(scan_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+
+target_link_libraries(test1 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
 #target_link_libraries(subscriber ${catkin_LIBRARIES})
 
