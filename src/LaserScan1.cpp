@@ -60,15 +60,15 @@ int main(int argc, char **argv)
   {
     ros::param::get("/scan_1/min_range_1", range_min_);
     ros::param::get("/scan_1/max_range_1", range_max_);
-    ROS_INFO_STREAM("test   "<<range_max_);
+    ROS_INFO_STREAM("test  1 "<<range_max_);
 
     sensor_msgs::LaserScan msg;
     
     msg.header.stamp = ros::Time::now();
     msg.header.frame_id = "scan_link_1";
-    msg.angle_min = 2.355-0.05; //30 degrees
-    msg.angle_max = 2.355+0.05; //150 degrees
-    msg.angle_increment = 0.1; //30 degrees
+    msg.angle_min = 0.87-0.05; //47,5 degrees
+    msg.angle_max = 0.87+0.05; //52,5 degrees
+    msg.angle_increment = 0.1; // 5 degrees
     msg.time_increment = 0;
     msg.scan_time = (2.0);
     msg.range_min = range_min_; //2cm
