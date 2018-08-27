@@ -7,18 +7,23 @@
 #include "sensor_msgs/LaserScan.h"
 #include "math.h"
 
+//Ultrasonic sensor 1
 #define trig1 3 //pin 15
 #define echo1 6 //pin 22
 
+//Ultrasonic sensor 2
 #define trig2 2 //pin 13
 #define echo2 10 //pin 24
 
+//Ultrasonic sensor 3
 #define trig3 23 //pin 33
 #define echo3 27 //pin 36
 
+//Ultrasonic sensor 4
 #define trig4 22 //pin 31
 #define echo4 26 //pin 32
 
+//Ultrasonic sensor 5
 #define trig5 4 //pin 16
 #define echo5 5 //pin 18
 
@@ -52,6 +57,7 @@ void setup()
   delay(30);
 }
 
+// Function to calculate distance of obstacle. 
 double calculate1()
 {
   digitalWrite(trig1, HIGH);
@@ -185,12 +191,12 @@ int main(int argc, char **argv)
     msg.ranges.assign(ranges_size, std::numeric_limits<double>::infinity());
 
     geometry_msgs::Vector3 range1; 
-    range1.z = calculate1()/100;
-    range1.z = range1.z*1.0f;
+    range1.z = calculate1()/100; // convert the distance in m
+    range1.z = range1.z*1.0f; // change value to float
     //msg.ranges={};
     if (range1.z <= msg.range_max && range1.z >= msg.range_min)
     {
-      msg.ranges.push_back(range1.z);
+      msg.ranges.push_back(range1.z); 
     }
     else
     {
