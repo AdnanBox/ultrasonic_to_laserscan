@@ -13,8 +13,8 @@
 #define trig2 2 //pin 13
 #define echo2 10 //pin 24
 
-#define trig3 21 //pin 29
-#define echo3 11 //pin 26
+#define trig3 23 //pin 33
+#define echo3 27 //pin 36
 
 #define trig4 22 //pin 31
 #define echo4 26 //pin 32
@@ -28,9 +28,6 @@ static long travelTime2, startTime2;
 static long travelTime3, startTime3;
 static long travelTime4, startTime4;
 static long travelTime5, startTime5;
-
-int trig_pins[5]={3, 2, 21, 22, 4};
-int echo_pins[5]={6, 10, 11, 26, 5};
 
 void setup()
 {
@@ -164,7 +161,7 @@ int main(int argc, char **argv)
   
 
   ros::Publisher pub = n.advertise<sensor_msgs::LaserScan>("scan", 1000);
-  ros::Rate rate(10);
+  ros::Rate rate(5);
 
   while (ros::ok())
   {

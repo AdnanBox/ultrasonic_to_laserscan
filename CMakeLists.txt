@@ -9,6 +9,7 @@ project(fall_sensor)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+
   std_msgs
   sensor_msgs
   geometry_msgs
@@ -144,6 +145,7 @@ add_executable(LaserScan2 src/LaserScan2.cpp)
 add_executable(LaserScan3 src/LaserScan3.cpp)
 add_executable(LaserScan4 src/LaserScan4.cpp)
 add_executable(LaserScan5 src/LaserScan5.cpp)
+
 
 add_executable(scan_publisher src/scan_publisher.cpp)
 add_executable(test1 src/test1.cpp)
