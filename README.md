@@ -11,8 +11,9 @@ https://wiki.odroid.com/accessory/add-on_boards/xu4_shift_shield
 
 
 Pin declaration :
->> #define pin_A 6 // pin number 22
-
+'''
+#define pin_A 6 // pin number 22
+'''
 In this case, the pin at location "22" on the shifter shield is defined with the variable name "pin_A" having a wiringPi number "6".
 
 
