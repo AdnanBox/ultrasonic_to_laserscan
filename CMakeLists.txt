@@ -138,6 +138,9 @@ include_directories(
 
 FIND_LIBRARY(WIRINGPI_LIBRARY wiringPi) # add path if needed - 
 
+
+
+
 add_executable(fall_sensor src/fall_sensor.cpp)
 add_executable(clearance_publisher src/clearance_publisher.cpp)
 add_executable(LaserScan1 src/LaserScan1.cpp)
@@ -149,6 +152,8 @@ add_executable(LaserScan5 src/LaserScan5.cpp)
 
 add_executable(scan_publisher src/scan_publisher.cpp)
 add_executable(test1 src/test1.cpp)
+add_executable(test2 src/test2.cpp)
+
 
 #add_executable(subscriber src/subscriber.cpp)
 
@@ -181,6 +186,8 @@ target_link_libraries(LaserScan5 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread
 target_link_libraries(scan_publisher ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
 
 target_link_libraries(test1 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+target_link_libraries(test2 ${catkin_LIBRARIES} ${WIRINGPI_LIBRARY} pthread crypt m rt)
+
 
 #target_link_libraries(subscriber ${catkin_LIBRARIES})
 
