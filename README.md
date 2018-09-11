@@ -1,7 +1,7 @@
 To use this repository, it is required to first clone the wiringPi library from Hardkernel. https://github.com/hardkernel/wiringPi.git \
 Build the library using the build script available in the root directory of the library. 
 
-This package reads the incoming data from an ultrasonic sensor and publishes it as a LaserScan msg.  
+This package reads the incoming data from an ultrasonic sensor and publishes it as a LaserScan msg under the topic /scan.
 
 The package was implemented using an odroid XU4. The ultrasonic sensor HC-SR04 supports only 5V. Since all the native GPIO pins on the odroid XU4 operate at 1.8V, a shifter shield is needed to shift the voltage level to 3.3V or 5V.
 
