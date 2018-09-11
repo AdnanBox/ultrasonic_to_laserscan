@@ -22,5 +22,7 @@ distance = time(µs)/58  // this formula gives the distance in cm.
 For a more detailed explanation of the functioning of an ultrasonic sensor, refer to the following link :
 http://arduino-info.wikispaces.com/Ultrasonic+Distance+Sensor
 
-![alt text](https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup1.jpg = 100x100)
+![alt text](https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup1.jpg)
 ![alt text](https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup2.jpg)
+<img src="https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup1.jpg" width="100">
+
