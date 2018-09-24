@@ -25,3 +25,13 @@ http://arduino-info.wikispaces.com/Ultrasonic+Distance+Sensor
 <img src="https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup1.jpg" width="300">
 <img src="https://github.com/ipa-fog-ab/ultrasonic_to_laserscan/blob/master/img/setup2.jpg" width="300">
 
+
+HOW TO:
+1. Run the launch file using :
+```
+roslaunch ultrasonic_to_laserscan scan_publisher.launch
+```
+
+
+NOTE: The nodes fall_sensor.cpp, clearance_publisher.cpp, and scan_publisher.cpp are optional and used only for testing purposes of the ultrasonic sensor.
+main_optimised.cpp is a more efficient version of main.cpp, but ultimately serves the same purpose.
