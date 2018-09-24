@@ -1,38 +1,4 @@
 <launch>
-  <!--node pkg="tf" type="static_transform_publisher" name="map_to_scan_1" args="1 0 0 0 0 0 /map /scan_link_1 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_2" args="2 0 0 0 0 0 /map /scan_link_2 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_3" args="0 0 0 0 0 0 /map /scan_link_3 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_4" args="0 0 0 0 0 0 /map /scan_link_4 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="map_to_scan_5" args="0 0 0 0 0 0 /map /scan_link_5 100"/-->
-
   <node pkg="tf" type="static_transform_publisher" name="map_to_scan" args="0 0 0 0 0 0 /map /scan_link 100"/>
-
-  <!--node pkg="fall_sensor" type="LaserScan1" name="scan_1" output="screen">
-    <param name = "min_range_1" type="double" value= "0.02"/>
-    <param name = "max_range_1" type="double" value= "2.0"/>
-    <param name = "freq" type="int" value= "10"/>
-  </node>
-  <node pkg="fall_sensor" type="LaserScan2" name="scan_2" output="screen">
-    <param name = "min_range_2" type="double" value= "0.02"/>
-    <param name = "max_range_2" type="double" value= "2.0"/>
-    <param name = "freq" type="int" value= "10"/>
-  </node>
-  <node pkg="fall_sensor" type="LaserScan3" name="scan_3" output="screen">
-    <param name = "min_range_3" type="double" value= "0.02"/>
-    <param name = "max_range_3" type="double" value= "2.0"/>
-    <param name = "freq" type="int" value= "1"/>
-  </node>
-  <node pkg="fall_sensor" type="LaserScan4" name="scan_4" output="screen">
-    <param name = "min_range_4" type="double" value= "0.02"/>
-    <param name = "max_range_4" type="double" value= "2.0"/>
-    <param name = "freq" type="int" value= "1"/>
-  </node>
-  <node pkg="fall_sensor" type="LaserScan5" name="scan_5" output="screen">
-    <param name = "min_range_5" type="double" value= "0.02"/>
-    <param name = "max_range_5" type="double" value= "2.0"/>
-    <param name = "freq" type="int" value= "1"/>
-  </node-->
-  
-  <node pkg="fall_sensor" type="test2" name="test2" output="screen"/>
-
+  <node pkg="fall_sensor" type="main_optimised" name="main_optimised" output="screen"/>
  </launch>
